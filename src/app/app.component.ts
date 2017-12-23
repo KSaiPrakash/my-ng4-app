@@ -39,4 +39,8 @@ export class AppComponent {
       }
     );
   }
+
+  onSubmit(args) {
+    console.log(args);
+  }
 }

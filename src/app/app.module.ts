@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {InterceptorModule} from './interceptor.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainContainerComponent } from './main-container/main-container.component';
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     InterceptorModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
