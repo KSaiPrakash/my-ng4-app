@@ -13,7 +13,11 @@ export class AppComponent implements OnInit {
   name: string;
   age: number;
   found: boolean;
+
+
 public user: UserModel;
+
+
   /* standing data goes here*/
 public genders = [
   { value: 'F', display: 'Female' },
@@ -47,7 +51,7 @@ public toggles = [
       isActive: false,
       toggle: this.toggles[1].value, // default to untoggled
       topics: [this.topics[1].value] // default to Technology
-  };
+    };
   }
 
   onNameKeyUP($event) {
@@ -82,7 +86,9 @@ public toggles = [
   }
 
   updateProfile(bodystring) {
-    const profile = new UserModel();
+
+    bodystring.role = bodystring.role ? (bodystring.role) : 'Admin'; // setting default to admin if null
+    bodystring.age = bodystring.age ? (bodystring.age) : '31'; // setting default to 31 if undefined
 
     console.log('bodystring  ' , bodystring);
     this.http.put(`https://my-json-server.typicode.com/techsithgit/json-faker-directory/profiles/`, bodystring)
