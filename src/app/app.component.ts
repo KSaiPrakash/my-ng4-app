@@ -51,7 +51,7 @@ public toggles = [
       isActive: false,
       toggle: this.toggles[1].value, // default to untoggled
       topics: [this.topics[1].value] // default to Technology
-    };
+     };
   }
 
   onNameKeyUP($event) {
@@ -88,7 +88,7 @@ public toggles = [
   updateProfile(bodystring) {
 
     bodystring.role = bodystring.role ? (bodystring.role) : 'Admin'; // setting default to admin if null
-    bodystring.age = bodystring.age ? (bodystring.age) : '31'; // setting default to 31 if undefined
+    bodystring.age = bodystring.age ? (bodystring.age) : 31; // setting default to 31 if undefined
 
     console.log('bodystring  ' , bodystring);
     this.http.put(`https://my-json-server.typicode.com/techsithgit/json-faker-directory/profiles/`, bodystring)
